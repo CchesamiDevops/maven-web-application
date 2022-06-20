@@ -23,7 +23,7 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http:54.172.29.118:9000/</sonar.host.url>
+		<sonar.host.url>http:172.31.80.90:9000/</sonar.host.url>
 		<sonar.login>f9cd34360e237311f1f17556a2881fbf42ce51ac</sonar.login>
 		<!-- <sonar.login>admin</sonar.login> -->
 		<!-- <sonar.password>admin</sonar.password> -->
@@ -98,13 +98,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
-	      <url>http://54.90.239.155:8081/repository/PayPal-Releases/</url>
+	      <url>http://172.31.26.156:8081/repository/PayPal-Releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>http://54.90.239.155:8081/repository/paypals-SNAPSHOT/</url>
+	      <url>http://172.31.26.156:8081/repository/paypals-SNAPSHOT/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
