@@ -15,13 +15,13 @@ node {
 	stage('5DeployToUAT') {
 	    //deploy adapters: [tomcat9(credentialsId: 'TomcatCred9', path: '', url: 'http://3.80.120.138:8080/')], contextPath: null, onFailure: false, war: 'target/*war'
 	}
-/*	stage('6Approval') {
+	stage('6Approval') {
 	   // timeout(time: 2, unit: 'HOURS') {
     //input message: 'Application Ready for deployment, please review and approve'
-    //input 'Apps Ready For Deployment, Please your approval is needed'
+    input 'Apps Ready For Deployment, Please your approval is needed'
       //}
 	}
-	*/
+	
 	stage('7DeployToTomcat') {
 	    //deploy adapters: [tomcat9(credentialsId: 'TomcatCred9', path: '', url: 'http://3.80.120.138:8080/')], contextPath: null, onFailure: false, war: 'target/*war'
 	}
