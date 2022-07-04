@@ -18,7 +18,7 @@ node {
 	stage('6Approval') {
 	   // timeout(time: 2, unit: 'HOURS') {
     //input message: 'Application Ready for deployment, please review and approve'
-    input 'Apps Ready For Deployment, Please your approval is needed'
+    //input 'Apps Ready For Deployment, Please your approval is needed'
       //}
 	}
 	stage('7DeployToTomcat') {
