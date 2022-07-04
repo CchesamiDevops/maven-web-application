@@ -1,0 +1,30 @@
+node {
+	def mavenHome = tool name: 'Maven3.8.6'
+	stage('1codeclone') {
+	git 'https://github.com/CchesamiDevops/maven-web-application'
+	}
+	stage('2Build') {
+	    sh "${mavenHome}/bin/mvn install"
+	}
+	stage('3codequality') {
+	   // sh "${mavenHome}/bin/mvn sonar:sonar"
+	}
+	stage('4UploadArtifact') {
+	   // sh "${mavenHome}/bin/mvn deploy"
+	}
+	stage('5DeployToUAT') {
+	    //deploy adapters: [tomcat9(credentialsId: 'TomcatCred9', path: '', url: 'http://3.80.120.138:8080/')], contextPath: null, onFailure: false, war: 'target/*war'
+	}
+	stage('6Approval') {
+	   // timeout(time: 2, unit: 'HOURS') {
+    //input message: 'Application Ready for deployment, please review and approve'
+    input 'Apps Ready For Deployment, Please your approval is needed'
+      //}
+	}
+	stage('7DeployToTomcat') {
+	    //deploy adapters: [tomcat9(credentialsId: 'TomcatCred9', path: '', url: 'http://3.80.120.138:8080/')], contextPath: null, onFailure: false, war: 'target/*war'
+	}
+	stage('8EmailNotification') {
+	    emailext body: 'Please check and review app build status.', recipientProviders: [developers(), buildUser(), requestor()], subject: 'Build Status', to: 'group33@gmail.com'
+	}
+}
